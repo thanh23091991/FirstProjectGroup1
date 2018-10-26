@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,33 +17,30 @@
 		<div class="login-form">
 			<div class="main-div">
 				<div class="panel">
-					<h2>Admin Login</h2>
-					<p>Please enter your email and password</p>
+					<h2>Đăng ký</h2>
+					<p>Nhập email và mật khẩu của bạn</p>
 				</div>
-				<form id="Login">
-
+				<form id="Login" action="LoginForm" method="POST">
 					<div class="form-group">
-
-
 						<input type="email" class="form-control" id="inputEmail"
-							placeholder="Email Address">
-
+							placeholder="Email Address" name="email" value="${email}">
+							<p class ="errLogin">${errEmail}</p>
 					</div>
-
+					
 					<div class="form-group">
-
 						<input type="password" class="form-control" id="inputPassword"
-							placeholder="Password">
-
+							placeholder="Password" name="password" value="${password}">
+							<p class ="errLogin">${errPassword}</p>
 					</div>
+					
 					<div class="forgot">
 						<a href="reset.html">Forgot password?</a>
 					</div>
+							<p class ="errLogin">${errLogin}</p>
 					<button type="submit" class="btn btn-primary">Login</button>
-
 				</form>
 			</div>
-			<p class="botto-text">Designed by Sunil Rajput</p>
+			<p class="botto-text">Designed by ThanhIT</p>
 		</div>
 	</div>
 </body>
