@@ -11,7 +11,6 @@
 	href="css/bootstrap.min.css" />
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/main.js"></script>
-<script src="js/ajax.js"></script>
 </head>
 <body>
 <div class="alert "
@@ -65,10 +64,10 @@
 							<td><c:out value="${point.diemLan1}" /></td>
 							<td><c:out value="${point.diemLan2}" /></td>
 							<td><a
-								href="${pageContext.request.contextPath}/updateCarById?carId=${point.maSV}"><button
+								href="udpPoint?masv=${point.maSV}&mamh=${point.maMH}&diem1=${point.diemLan1}&hocky=${point.hocKy}&diem2=${point.diemLan2}"><button
 										class="btn btn-success" value="Update">Update</button></a></td>
-							<td><a
-								href="${pageContext.request.contextPath}/deleteCarById?carId=${car.carId}"><button
+							<td><a onclick="return comfirmDeletePoint()"
+								href="deletePoint?masv=${point.maSV}&mamh=${point.maMH}&diem1=${point.diemLan1}&hocky=${point.hocKy}&diem2=${point.diemLan2}"><button
 										class="btn btn-danger" value="Delete">Delete</button></a></td>
 						</tr>
 					</c:forEach>

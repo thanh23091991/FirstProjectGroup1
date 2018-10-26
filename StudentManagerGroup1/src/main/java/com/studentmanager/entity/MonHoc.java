@@ -59,10 +59,6 @@ public class MonHoc {
 		this.listDiem = listDiem;
 	}
 	
-	
-	
-	
-	
 	public MonHoc(String maMH, String tenMH, int soTrinh) {
 		this.maMH = maMH;
 		this.tenMH = tenMH;
