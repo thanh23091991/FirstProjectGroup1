@@ -94,3 +94,6 @@ body#LoginForm {
 	font-size: 13px;
 	text-decoration: none;
 }
+.errLogin{
+	color: #ff0000;
+}
