@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.studentmanager.entity.SinhVien;
 
 @Repository
-public interface SinhVienRepository extends JpaRepository<SinhVien, String> {
+public interface SinhVienRepositoryCustom  {
 	@Transactional
 	@Modifying
 	@Query("UPDATE SinhVien c SET c.tenSV = :tenSV,c.gioiTinh = :gioiTinh,c.ngaySinh = :ngaySinh,c.maLop = :maLop,c.queQuan = :queQuan  WHERE c.maSV = :maSV")
