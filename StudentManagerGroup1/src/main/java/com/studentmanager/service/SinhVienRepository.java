@@ -13,10 +13,14 @@ import com.studentmanager.entity.SinhVien;
 
 @Repository
 public interface SinhVienRepository extends JpaRepository<SinhVien, String> {
+
 	@Transactional
 	@Modifying
 	@Query("UPDATE SinhVien c SET c.tenSV = :tenSV,c.gioiTinh = :gioiTinh,c.ngaySinh = :ngaySinh,c.maLop = :maLop,c.queQuan = :queQuan  WHERE c.maSV = :maSV")
 	void updateSinhVien(@Param("maSV") String maSV, @Param("tenSV") String tenSV, @Param("gioiTinh") boolean gioiTinh,
 			@Param("ngaySinh") Date ngaySinh, @Param("queQuan") String queQuan, @Param("maLop") String maLop);
 
+	
 }
+	
+
