@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -15,6 +17,9 @@ public interface DiemRepository extends JpaRepository<Diem, String> {
 	List<Diem> findAll();
 	List<Diem> findByMaSV(String maSV);
 	List<Diem> findByMaMH(String maMH);
+	
+	@Query("SELECT e FROM Diem e")
+	 Page<Diem> findDiems(Pageable pageable);
 	
 	@Transactional
 	@Modifying

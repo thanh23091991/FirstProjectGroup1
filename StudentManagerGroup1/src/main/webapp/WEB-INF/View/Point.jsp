@@ -43,6 +43,9 @@
 			<a href="insPoint"><button
 					class="btn btn-outline-primary" value="Insert"
 					style="float: left; margin-bottom: 5px">Insert</button></a>
+					<p>Trang: <c:forEach begin="1" end="${diemsSize}" varStatus="loop">
+    <a href="point?page=${loop.index}">${loop.index}</a>
+</c:forEach>  </p> 
 			<table class="table table-hover table-bordered">
 				<thead>
 					<tr>

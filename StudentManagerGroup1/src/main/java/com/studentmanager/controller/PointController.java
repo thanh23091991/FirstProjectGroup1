@@ -3,6 +3,10 @@ package com.studentmanager.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,10 +22,29 @@ public class PointController {
 	private DiemRepository diemRepository;
 
 	@RequestMapping(value = { "/point" }, method = RequestMethod.GET)
-	public String viewListPoint(Model model) {
+	public String viewListPoint(Model model,
+			@RequestParam(name = "page", required = false, defaultValue = "0") String page,
+			@RequestParam(name = "size", required = false, defaultValue = "3") Integer size) {
 		try {
+			// Calculate number of pages
 			List<Diem> diems = diemRepository.findAll();
-			model.addAttribute("pointList", diems);
+			int x = diems.size() / 3;
+			int y = diems.size() % 3;
+			if (y > 0) {
+				x++;
+			}
+			model.addAttribute("diemsSize", x);
+
+			// Get page
+			Sort sortable = Sort.by("maSV").ascending();
+			int pagenum = Integer.parseInt(page);
+			if (pagenum > 0) {
+				pagenum--;
+			}
+			Pageable pageable = PageRequest.of(pagenum, size, sortable);
+			Page<Diem> pages = diemRepository.findDiems(pageable);
+			List<Diem> rs = pages.getContent();
+			model.addAttribute("pointList", rs);
 
 			return "Point";
 		} catch (Exception e) {
@@ -57,16 +80,18 @@ public class PointController {
 			@RequestParam("diem1") int diem1, @RequestParam("diem2") int diem2, @RequestParam("hocky") int hocky,
 			Model model) {
 		try {
-			Diem diem = new Diem(masv, mamh, hocky, diem1, diem2);
-			diemRepository.save(diem);
-			model.addAttribute("insertedMsg", "Insert Success!");
-			return "redirect:/point";
+			if (diem1 < 0 || diem1 > 10 || diem2 < 0 || diem2 > 10 || hocky < 0) {
+				model.addAttribute("insertMsg", "Insert Fail! Please try again!");
+				return "InsertPoint";
+			} else {
+				Diem diem = new Diem(masv, mamh, hocky, diem1, diem2);
+				diemRepository.save(diem);
+				return "redirect:/point";
+			}
+
 		} catch (Exception e) {
-			model.addAttribute("insertedMsg", "Insert Fail! Please try again!");
 			return "ErrorPage";
 		}
-
-		
 	}
 
 	@RequestMapping(value = { "/deletePoint" }, method = RequestMethod.GET)
