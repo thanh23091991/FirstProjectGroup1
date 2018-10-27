@@ -7,6 +7,6 @@
 <title>Error</title>
 </head>
 <body>
-	
+	ERROR! Please try again or contact Team 1
 </body>
 </html>

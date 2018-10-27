@@ -19,9 +19,9 @@
 			<h3>Update Point</h3>
 			Student Id <input readonly="true" name="masv" class="form-control" type=text value=<c:out value="${point.maSV}" /> > 
 			Subject Id <input readonly="true" name="mamh" class="form-control" type=text value=<c:out value="${point.maMH}" /> > 
-			First Point <input name="diem1" class="form-control" type=text value=<c:out value="${point.hocKy}" /> > 
-			Second Point <input name="diem2" class="form-control" type=text value=<c:out value="${point.diemLan1}" /> > 
-			Semester <input name="hocky" class="form-control" type=text value=<c:out value="${point.diemLan2}" /> > 
+			First Point <input name="diem1" class="form-control" type=text value=<c:out value="${point.diemLan1}" /> > 
+			Second Point <input name="diem2" class="form-control" type=text value=<c:out value="${point.diemLan2}" /> > 
+			Semester <input name="hocky" class="form-control" type=text value=<c:out value="${point.hocKy}" /> > 
 			<div>
 	        	<p name="alert" style="color: red">
 					<c:out value="${updateMsg}" />
