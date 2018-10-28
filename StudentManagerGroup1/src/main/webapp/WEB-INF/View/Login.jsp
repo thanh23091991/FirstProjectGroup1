@@ -23,18 +23,18 @@
 				<form id="Login" action="LoginForm" method="POST">
 					<div class="form-group">
 						<input type="email" class="form-control" id="inputEmail"
-							placeholder="Email Address" name="email" value="${email}">
+							placeholder="Email Address" name="email" value="${cookie.email.value}">
 							<p class ="errLogin">${errEmail}</p>
 					</div>
 					
 					<div class="form-group">
 						<input type="password" class="form-control" id="inputPassword"
-							placeholder="Password" name="password" value="${password}">
+							placeholder="Password" name="password" value="${cookie.password.value}">
 							<p class ="errLogin">${errPassword}</p>
 					</div>
 					
 					<div class="forgot">
-						<a href="reset.html">Forgot password?</a>
+						<input type="checkbox" value="1" name="remember"> <span> Remember me?</span>
 					</div>
 							<p class ="errLogin">${errLogin}</p>
 					<button type="submit" class="btn btn-primary">Login</button>

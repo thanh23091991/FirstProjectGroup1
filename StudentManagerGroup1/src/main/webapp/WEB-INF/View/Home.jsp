@@ -36,10 +36,11 @@
 						</form>
 					</li>
 					<li class="nav-item">
-						<p style="color: white;padding: 5px;">   Welcome : ${email}</p>
+						<p style="color: white;padding: 5px;">   Welcome : ${sessionScope.email}</p>
 					</li>
 					<%} else{ %>
-					<li class="nav-item"><a class="nav-link" href="Login">Login</a>
+						
+						<li class="nav-item"><a class="nav-link" href="Login">Login</a>
 					<%}%>
 				</ul>
 			</div>
