@@ -1,7 +1,8 @@
 package com.studentmanager.controller;
 
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -12,12 +13,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.studentmanager.entity.Diem;
 import com.studentmanager.service.DiemRepository;
 
 @Controller
 public class PointController {
+	// logger to write log for error
+	private static final Logger logger = LoggerFactory.getLogger(PointController.class);
 	@Autowired
 	private DiemRepository diemRepository;
 
@@ -48,7 +50,7 @@ public class PointController {
 
 			return "Point";
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.error(e.getMessage());
 			return "ErrorPage";
 		}
 	}
@@ -70,7 +72,7 @@ public class PointController {
 
 			return "UpdatePoint";
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			return "ErrorPage";
 		}
 	}
@@ -90,6 +92,7 @@ public class PointController {
 			}
 
 		} catch (Exception e) {
+			logger.error(e.getMessage());
 			return "ErrorPage";
 		}
 	}
@@ -105,7 +108,7 @@ public class PointController {
 
 			return "redirect:/point";
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			return "ErrorPage";
 		}
 	}
@@ -119,7 +122,7 @@ public class PointController {
 
 			return "redirect:/point";
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			logger.error(e.getMessage());
 			return "ErrorPage";
 		}
 	}
