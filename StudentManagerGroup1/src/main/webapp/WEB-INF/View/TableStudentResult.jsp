@@ -26,9 +26,8 @@
 	<center>
 
 		<div class="container">
-
 			<h3>Danh sách sinh viên</h3>
-			<h4>
+			<h4 style="color:red" >
 				<c:out value="${deletedMsg}" />
 			</h4>
 			<h4>
@@ -38,10 +37,11 @@
 				<c:out value="${insertedMsg}" />
 			</h4>
 			<a href="${pageContext.request.contextPath}/insertInfoSinhVien"><button
-					class="btn btn-outline-primary" value="Thêm mới"
-					style="float: left; margin-bottom: 5px">Insert</button></a>
+					class="btn btn-outline-primary" value="Insert"
+					style="float: left; margin-bottom: 5px">Thêm mới</button></a>
 			<table class="table table-hover table-bordered"
 				style="text-align: center">
+		
 				<thead>
 					<tr>
 						<th scope="col">Mã SV</th>

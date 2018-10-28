@@ -80,4 +80,5 @@ public class SinhVien {
 	public void setListDiemSV(List<Diem> listDiemSV) {
 		this.listDiemSV = listDiemSV;
 	}
+	
 }

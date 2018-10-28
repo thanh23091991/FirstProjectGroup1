@@ -17,18 +17,18 @@
 <body>
 	<center>
 		<div class="container">
-			<form action="${pageContext.request.contextPath}/sinhVienUpdate" method="post" class="form">
+			<form action="${pageContext.request.contextPath}/sinhVienUpdate" method="post" class="form" name="sinhVien">
 			<h3>Cập nhật thông tin sinh viên</h3>
 			
-			Mã SV <input name="maSV" class="form-control" type=text value=<c:out value="${sinhVien.maSV}" /> readonly="true" required> 
-			Tên SV <input name="tenSV" class="form-control" type=text value=<c:out value="${sinhVien.tenSV}" /> required> 
+			Mã SV <input name="maSV" class="form-control" type=text value="<c:out value="${sinhVien.maSV}" />" readonly="true" required> 
+			Tên SV <input name="tenSV" class="form-control" type=text value="<c:out value="${sinhVien.tenSV}" />" required> 
 			Giới tính <select class="form-control"  name="gioiTinh">
 					<option name="true" value="true" ${selectedGender == true ? 'selected="selected"' : ''} >Nam</option>
 					<option name="false" value="false" ${selectedGender == false ? 'selected="selected"' : ''}>Nữ</option>
 				</select> 
-			Ngày sinh <input name="ngaySinh" class="form-control" type=date value=<c:out value="${sinhVien.ngaySinh}" /> required> 
-			Quê quán <input name="queQuan" class="form-control" type=text value=<c:out value="${sinhVien.queQuan}" /> required> 
-	        Mã lớp <input name="maLop" class="form-control" type=text value=<c:out value="${sinhVien.maLop}" /> required> 
+			Ngày sinh <input name="ngaySinh" class="form-control" type=date value="<c:out value="${sinhVien.ngaySinh}" />" required max='2018-01-01' min='1899-01-01'> 
+			Quê quán <input name="queQuan" class="form-control" type=text value="<c:out value="${sinhVien.queQuan}" />" required> 
+	        Mã lớp <input name="maLop" class="form-control" type=text value="<c:out value="${sinhVien.maLop}" />" required> 
 	        <input type="submit" value= "Cập nhật" class= "btn btn-success">
 			</form>
 		</div>
