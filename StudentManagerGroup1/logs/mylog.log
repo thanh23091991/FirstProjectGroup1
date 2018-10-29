@@ -196,3 +196,6 @@ Caused by: com.microsoft.sqlserver.jdbc.SQLServerException: The TCP/IP connectio
 2018-10-29 07:47:43.939  WARN 4484 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.studentmanager.entity.Diem
 2018-10-29 07:47:43.941  WARN 4484 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.studentmanager.entity.Diem
 2018-10-29 07:47:44.772  WARN 4484 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-10-29 08:10:26.151  WARN 7040 --- [main] org.hibernate.mapping.RootClass          : HHH000038: Composite-id class does not override equals(): com.studentmanager.entity.Diem
+2018-10-29 08:10:26.153  WARN 7040 --- [main] org.hibernate.mapping.RootClass          : HHH000039: Composite-id class does not override hashCode(): com.studentmanager.entity.Diem
+2018-10-29 08:10:28.676  WARN 7040 --- [main] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
