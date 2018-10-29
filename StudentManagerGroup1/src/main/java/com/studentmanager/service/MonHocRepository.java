@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,9 +20,10 @@ public interface MonHocRepository extends JpaRepository<MonHoc, String> {
 
 	List<MonHoc> findAll();
 
-	List<MonHoc> findByMaMH(String maMH);
+	List<MonHoc> findByMaMH(Pageable pageable);
 
-	List<MonHoc> findByTenMH(String tenMH);
+	@Query("SELECT e FROM MonHoc e")
+	Page<MonHoc> findMonHocs(Pageable pageable);
 	
 	@Transactional
 	@Modifying

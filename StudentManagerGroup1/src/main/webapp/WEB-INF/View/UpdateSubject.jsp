@@ -38,7 +38,6 @@
 	function validateForm() {
 	    var x = document.forms["myform"]["tenMH"].value;
 	    var y = document.forms["myform"]["soTrinh"].value;
-	    var regex_text = /^[a-zA-Z]+$/;
 	    if (x == "" || x == " ") {
 	        alert("Tên môn học không được để trống");
 	        return false;
@@ -48,16 +47,12 @@
 	        return false;
 	    }
 	    if (y <0 || y >7){
-	    	alert("Vui lòng nhập đúng định dạng dữ liệu 1");
+	    	alert("Vui lòng nhập đúng định dạng dữ liệu ");
 	        return false;
 	    }
 	    
 	    if ((x == "" || x == " ")&&(y == "" || y == " ")){
 	    	alert("Vui lòng nhập đầy đủ thông tin");
-	        return false;
-	    }
-	    if(regex_text.test(x)== false){
-	   		alert("Vui lòng nhập đúng định dạng dữ liệu2");
 	        return false;
 	    }
 	    if(isNaN(y))

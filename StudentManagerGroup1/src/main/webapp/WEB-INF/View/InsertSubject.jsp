@@ -43,7 +43,6 @@
 		var x = document.forms["monhoc"]["maMH"].value
 	    var y = document.forms["monhoc"]["soTrinh"].value;
 		var z = document.forms["monhoc"]["tenMH"].value;
-		var regex_text = /^[a-zA-Z]+$/;
 		if (x == "" || x == " "){
 		    alert("Mã môn học không được để trống");
 		    return false;
@@ -56,13 +55,29 @@
 		    alert("Số trình không được để trống");
 		    return false;
 		}
-		if(regex_text.test(z)== false){
-		  alert("Vui lòng nhập đúng định dạng dữ liệu");
-		  return false;
+		if((x == "" || x == " ")&&(z == "" || z == " ")&&(y == "" || y == " ")){
+			alert("Vui lòng điền đầy đủ thông tin");
+			return false;
+		}
+		if((x == "" || x == " ")&&(z == "" || z == " ")){
+			alert("Vui lòng điền đầy đủ thông tin");
+			return false;
+		}
+		if((x == "" || x == " ")&&(y == "" || y == " ")){
+			alert("Vui lòng điền đầy đủ thông tin");
+			return false;
+		}
+		if((y == "" || y == " ")&&(z == "" || z == " ")){
+			alert("Vui lòng điền đầy đủ thông tin");
+			return false;
+		}
+		if(y < 0 || y >7){
+			alert("Vui lòng nhập đúng định dạng dữ liệu");
+		    return false;
 		}
 	    if(isNaN(y))
 	    {
-	    	alert("Vui lòng nhập đúng định dạng dữ liệu ");
+	    	alert("Vui lòng nhập đúng định dạng dữ liệu");
 	    	return false ;
 	    }
 	}

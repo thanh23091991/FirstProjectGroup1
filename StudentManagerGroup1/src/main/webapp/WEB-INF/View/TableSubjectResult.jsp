@@ -16,9 +16,12 @@
 <body>
 	<h3 style="margin-top: 5%; text-align: center">Table Subjects</h3>
 			
-			 <div style="text-align: center;"><a href="insSubInfo">
-			 <button class="btn btn-outline-primary" value="Insert">Insert</button></a></div>
-			 
+			 <div style="margin-left: 27%">
+			 	<form action="/search">
+			 	<button style="float: left;" class="btn btn-outline-primary" value="Insert"  type="submit">Search</button>
+			 	<input style="width: 200px; padding-left: 10px"  name="keyword" class="form-control" type=text/>
+			 	</form>
+			 </div>
 			 
 			<div class="contentbody" style="width: 600px; margin-left: 27%; margin-top: 15px" >
 			   
@@ -33,14 +36,19 @@
 					</tr>
 				</thead>
 					<tbody>
+					<!--Get a subject list then print out each attribute of each object-->
 					<c:forEach items="${subjectlist}" var="subject">
 						<tr>
 							<td><c:out value="${subject.maMH}" /></td>
 							<td><c:out value="${subject.tenMH}" /></td>
 							<td><c:out value="${subject.soTrinh}" /></td>
+							
+							<!-- Button go to Subject Controller do method insertMonHocInfo()   -->
 							<td><a
 								href="updateSubInfo/${subject.maMH}"><button
-										class="btn btn-success" value="Update">Update</button></a></td>
+								class="btn btn-success" value="Update">Update</button></a></td>
+								
+							<!-- Button go to Subject Controller do method doDeleteMonHoc()  -->
 							<td><a
 								href="subjectDelete/${subject.maMH}"><button
 										class="btn btn-danger" value="Delete" onclick="return confirm('Bạn có chắc chắn muốn xóa ?')">Delete</button></a></td>
@@ -54,6 +62,13 @@
 				
 			</div>
 		<a href="/subject-show"><button class="btn btn-success" value="Continue" style="margin-left: 27%">Continue</button></a>	
+		<a href="insSubInfo"><button class="btn btn-outline-primary" value="Insert" style="margin-left: 34%">Insert</button></a>
+		<p style="margin-left: 27%; margin-top: 10px">
+			    Page:
+				<c:forEach begin="1" end="${monhocListSize}" varStatus="loop">
+					<a href="subject-show?page=${loop.index}">${loop.index}</a>
+				</c:forEach>
+		</p>
 			
 </body>
 </html>
