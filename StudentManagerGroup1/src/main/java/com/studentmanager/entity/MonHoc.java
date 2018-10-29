@@ -64,6 +64,10 @@ public class MonHoc {
 		this.tenMH = tenMH;
 		this.soTrinh = soTrinh;
 	}
+	
+	public MonHoc() {
+		
+	}
 
 	@Override
 	public String toString() {
