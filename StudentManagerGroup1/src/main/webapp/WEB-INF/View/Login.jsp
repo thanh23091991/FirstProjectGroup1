@@ -17,7 +17,7 @@
 		<div class="login-form">
 			<div class="main-div">
 				<div class="panel">
-					<h2>Đăng ký</h2>
+					<h2>Đăng nhập</h2>
 					<p>Nhập email và mật khẩu của bạn</p>
 				</div>
 				<form id="Login" action="LoginForm" method="POST">

@@ -24,8 +24,8 @@
 					<li class="nav-item active"><a class="nav-link" href="Home">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Student</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Subject</a>
+					<li class="nav-item"><a class="nav-link" href="sinhVienList">Student</a></li>
+					<li class="nav-item"><a class="nav-link" href="subject-show">Subject</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="point">Point</a>
 					</li>
@@ -39,7 +39,6 @@
 						<p style="color: white;padding: 5px;">   Welcome : ${sessionScope.email}</p>
 					</li>
 					<%} else{ %>
-						
 						<li class="nav-item"><a class="nav-link" href="Login">Login</a>
 					<%}%>
 				</ul>
