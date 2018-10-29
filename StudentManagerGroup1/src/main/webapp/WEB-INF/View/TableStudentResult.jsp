@@ -27,7 +27,7 @@
 
 		<div class="container">
 			<h3>Danh sách sinh viên</h3>
-			<h4 style="color:red" >
+			<h4 style="color: red">
 				<c:out value="${deletedMsg}" />
 			</h4>
 			<h4>
@@ -39,9 +39,28 @@
 			<a href="${pageContext.request.contextPath}/insertInfoSinhVien"><button
 					class="btn btn-outline-primary" value="Insert"
 					style="float: left; margin-bottom: 5px">Thêm mới</button></a>
+			<p>
+				Page:
+				<c:forEach begin="1" end="${sinhVienListSize}" varStatus="loop">
+					<a href="sinhVienList?page=${loop.index}">${loop.index}</a>
+				</c:forEach>
+			</p>
+			<form class="form-inline" action="${pageContext.request.contextPath}/search">
+				<div>
+					
+					<div class="form-group"></div>
+					<input type="text" name="keyword"
+						placeholder="Nhập nội dung tìm kiếm.." class="form-control"
+						id="keyword">
+					<div class="form-group">
+						<button class="btn btn-primary" type="submit">Tìm kiếm</button>
+					</div>
+				</div>
+			</form>
+			<br />
 			<table class="table table-hover table-bordered"
 				style="text-align: center">
-		
+
 				<thead>
 					<tr>
 						<th scope="col">Mã SV</th>
@@ -71,7 +90,8 @@
 										class="btn btn-success" value="Update">Cập nhật</button></a></td>
 							<td><a
 								href="${pageContext.request.contextPath}/sinhVienDelete/${sinhVien.maSV}"><button
-										class="btn btn-danger" value="Delete" onclick="return confirm('Bạn có chắc chắn muốn xoá ?')">Xóa</button></a></td>
+										class="btn btn-danger" value="Delete"
+										onclick="return confirm('Bạn có chắc chắn muốn xoá ?')">Xóa</button></a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
