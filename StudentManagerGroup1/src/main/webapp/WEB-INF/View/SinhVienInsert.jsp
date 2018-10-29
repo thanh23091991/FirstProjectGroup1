@@ -18,7 +18,7 @@
 	<center>
 		<div class="container">
 			<form action="${pageContext.request.contextPath}/sinhVienInsert"
-				method="post" class="form" >
+				method="post" class="form"  style="width: 400px">
 				<h3>Thêm Sinh Viên</h3>
 				Mã SV <input name="maSV" class="form-control" type=text required>
 				Tên SV <input name="tenSV" class="form-control" type=text required> 
